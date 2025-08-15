@@ -1,5 +1,5 @@
 # emacs
-alias e="emacs"
+alias e="emacs -nw"
 
 # git
 alias gs="git status"
