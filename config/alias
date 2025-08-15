@@ -3,6 +3,7 @@ alias e="emacs"
 
 # git
 alias gs="git status"
+alias gsw="git switch"
 alias gd="git diff"
 alias gl="git log"
 alias ga="git add"
