@@ -1,1 +1,1 @@
-make all os behave the same
+# dotfiles
