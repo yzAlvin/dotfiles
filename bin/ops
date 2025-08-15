@@ -1,9 +1,13 @@
 #!/usr/bin/bash
 
-vault=$(op vault list --format=json \
+vault="$1"
+
+if [ -z "$vault" ]; then
+  vault=$(op vault list --format=json \
     | jq -r '.[].name' \
-    | fzf \
-)
+    | fzf
+  )
+fi
 
 item_id=$(op item list --vault "$vault" --format=json \
     | jq -r '.[] | "\(.title)\t\(.id)"' \
