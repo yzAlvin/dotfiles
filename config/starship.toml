@@ -1,0 +1,39 @@
+add_newline = true
+
+[aws]
+disabled = true
+
+[env_var.GEPPETTO_ENV]
+variable = "GEPPETTO_ENV"
+format = "[gcli: ($env_value) ]($style)"
+default = ""
+style = "bold yellow"
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
+vicmd_symbol = "[❮](bold yellow)"
+
+[directory]
+read_only = "🔒"
+truncation_length = 3
+truncate_to_repo = true
+
+[git_branch]
+symbol = " "
+
+# [git_status]
+# style = "fg:yellow"
+# ahead = "⇡${count}"
+# behind = "⇣${count}"
+# diverged = "⇕${count}"
+# staged = "[●](green) "
+# untracked = "[…](red) "
+# modified = "[±](yellow) "
+
+[golang]
+symbol = "go "
+
+[docker_context]
+symbol = " "
+style = "bold fg:blue"
