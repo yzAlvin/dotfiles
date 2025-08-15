@@ -1,0 +1,15 @@
+# emacs
+alias e="emacs"
+
+# git
+alias gs="git status"
+alias gd="git diff"
+alias gl="git log"
+alias ga="git add"
+alias gc="git commit"
+alias gcp="git cherry-pick"
+alias gp="git push"
+alias gco="git checkout"
+alias gpl="git pull"
+alias grb="git rebase"
+alias grs="git restore"
