@@ -1,0 +1,15 @@
+#!/usr/bin/bash
+
+vault=$(op vault list --format=json \
+    | jq -r '.[].name' \
+    | fzf \
+)
+
+item_id=$(op item list --vault "$vault" --format=json \
+    | jq -r '.[] | "\(.title)\t\(.id)"' \
+    | fzf --with-nth=1 --delimiter='\t' \
+    | cut -f2 \
+)
+
+op item get "$item_id" --reveal --format=json \
+    | jq -r '.fields.[] | select(.label == "password") | .value'
