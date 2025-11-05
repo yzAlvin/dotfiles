@@ -5,7 +5,13 @@ disabled = true
 
 [env_var.GEPPETTO_ENV]
 variable = "GEPPETTO_ENV"
-format = "[gcli: ($env_value) ]($style)"
+format = "([gcli: ($env_value) ]($style))"
+default = ""
+style = "bold yellow"
+
+[env_var.AWS_VAULT]
+variable = "AWS_VAULT"
+format = "([aws_vault: ($env_value) ]($style))"
 default = ""
 style = "bold yellow"
 
