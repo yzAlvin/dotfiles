@@ -11,3 +11,5 @@ sudo apt install i3
 sudo apt install maildir-utils
 
 sudo apt install editorconfig
+
+# https://github.com/ankitpokhrel/jira-cli
