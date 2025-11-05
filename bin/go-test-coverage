@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+PACKAGE_PATH=$1
+
+if [ -z "$PACKAGE_PATH" ]; then
+  echo "Usage: $0 <package-path>"
+  exit 1
+fi
+
+go test -v -coverprofile=./tmp/coverage.out "$PACKAGE_PATH" &&
+go tool cover -html=./tmp/coverage.out -o ./tmp/coverage.html &&
+open ./tmp/coverage.html
