@@ -1,0 +1,19 @@
+brew install --cask zen
+brew install --cask firefox
+
+brew install neovim
+brew install bitwarden
+brew install bitwarden-cli
+
+
+brew install db-browser-for-sqlite
+
+brew install --cask ghostty
+
+brew install zellij
+
+brew install topgrade
+
+brew install --cask soulseek
+
+curl -fsSL https://opencode.ai/install | bash
