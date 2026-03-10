@@ -15,3 +15,6 @@ alias gpl="git pull"
 alias grb="git rebase"
 alias grs="git restore"
 alias gsha="git rev-parse HEAD"
+
+alias f='cd $(fdfind --type directory | fzf)'
+alias fob='cd $(fdfind . '/home/alvin/Dev/flip/onboarding-champ/' --type directory | fzf)'
