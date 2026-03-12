@@ -1,0 +1,5 @@
+#!/usr/bin/bash
+
+account=$(ykman oath accounts list | fzf)
+ykman oath accounts code --single $account \
+    | xclip -sel clipboard
