@@ -11,7 +11,7 @@ fetch_otp() {
 }
 
 profile=$(
-    fdfind . "$HOME/dotfiles/work/bin/" \
+    fdfind . --no-ignore "$HOME/dotfiles/work/bin/" \
     | awk -F/ '{print $NF}' \
     | grep profile \
     | fzf
