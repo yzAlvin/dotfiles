@@ -3,10 +3,10 @@ add_newline = true
 [aws]
 disabled = true
 
-[env_var.GEPPETTO_ENV]
-variable = "GEPPETTO_ENV"
-format = "([gcli: ($env_value) ]($style))"
-default = ""
+[custom.geppetto]
+command = 'echo "${GEPPETTO_USERNAME}@${GEPPETTO_ENV}"'
+when = '[[ -n "$GEPPETTO_ENV" ]]'
+format = "[$output]($style) "
 style = "bold yellow"
 
 [env_var.AWS_VAULT]
