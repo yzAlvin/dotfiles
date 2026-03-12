@@ -1,0 +1,11 @@
+#!/usr/bin/bash
+
+login () {
+    role_name=$1
+    echo "Logging into AWS as $role_name"
+    aws-vault exec $role_name
+}
+
+role_name=$(aws-vault list --profiles | fzf)
+
+login "$role_name"

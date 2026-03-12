@@ -1,0 +1,9 @@
+alias gcli="geppetto-cli"
+alias chapi="~/dotfiles/work/bin/MappingCli"
+
+flip_dev_path="~/Dev/flip"
+alias dukepg="$flip_dev_path/geppetto-duke/scripts/connect-rds.sh"
+alias orgpg="$flip_dev_path/geppetto-org/scripts/connect-rds.sh"
+alias espg="$flip_dev_path/geppetto-event-store/scripts/connect-rds.sh"
+alias senderpg="$flip_dev_path/geppetto-sender-app/scripts/connect-rds.sh"
+alias addressbookpg="$flip_dev_path/geppetto-address-book/scripts/connect-rds.sh"

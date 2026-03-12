@@ -3,5 +3,7 @@
 *.log
 tmp/
 
-work/
 Yubico/u2f_keys
+work/bin/MappingCli*
+work/bin/jira
+work/bin/*.profile

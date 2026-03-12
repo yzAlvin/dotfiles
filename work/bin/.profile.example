@@ -1,0 +1,10 @@
+# Geppetto environment
+GEPPETTO_ENV=
+# Geppetto username
+GEPPETTO_USERNAME=
+
+# Name of item in 1password
+OP_PASSWORD_ITEM_NAME=
+
+# Name of oath account in yubikey
+YUBI_ACCOUNT=

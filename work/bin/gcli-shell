@@ -1,0 +1,38 @@
+#!/usr/bin/bash
+
+fetch_password() {
+    local item_name="$1"
+    op item get $item_name --fields label=password --reveal
+}
+
+fetch_otp() {
+    local account_name="$1"
+    ykman oath accounts code --single $account_name
+}
+
+profile=$(
+    fdfind . "$HOME/dotfiles/work/bin/" \
+    | awk -F/ '{print $NF}' \
+    | grep profile \
+    | fzf
+)
+source "$profile"
+
+GEPPETTO_PASSWORD=$(fetch_password "$OP_PASSWORD_ITEM_NAME")
+GEPPETTO_OTP=$(fetch_otp "$YUBI_ACCOUNT")
+GEPPETTO_TOKEN=$(
+    GEPPETTO_USERNAME="$GEPPETTO_USERNAME" \
+    GEPPETTO_ENV="$GEPPETTO_ENV" \
+    GEPPETTO_PASSWORD="$GEPPETTO_PASSWORD" \
+    geppetto-cli login \
+    --mfa-token="$GEPPETTO_OTP" \
+    --format="{{.IdToken}}"
+)
+
+export GEPPETTO_USERNAME="$GEPPETTO_USERNAME"
+export GEPPETTO_TOKEN="$GEPPETTO_TOKEN"
+export GEPPETTO_ENV="$GEPPETTO_ENV"
+
+echo "Logging into $GEPPETTO_ENV as $GEPPETTO_USERNAME"
+
+bash
