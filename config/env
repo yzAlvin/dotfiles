@@ -17,4 +17,5 @@ bind '"\e[B": history-search-forward'
 bind '"\e[OA": history-search-backward'
 bind '"\e[OB": history-search-forward'
 
-source "$HOME/dotfiles/config/.git-completion.bash"
+$HOME/dotfiles/config/.git-completion.bash
+

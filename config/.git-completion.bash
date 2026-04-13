@@ -4019,3 +4019,6 @@ ___git_complete gitk __gitk_main
 if [ "$OSTYPE" = cygwin ]; then
 	___git_complete git.exe __git_main
 fi
+
+__git_complete grb _git_rebase
+__git_complete gco _git_checkout
