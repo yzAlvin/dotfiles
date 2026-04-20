@@ -1,0 +1,35 @@
+#!/usr/bin/bash
+#
+# Lists Jira issues I've worked on.
+
+set -euo pipefail
+
+usage() {
+    echo "Usage: $(basename "$0") <project-key>"
+    echo
+    echo "Lists Jira issues assigned to the current user for a given project."
+    echo
+    echo "Example:"
+    echo "  $(basename "$0") ABC"
+    exit 1
+}
+
+jira-search () {
+    local project_key="$1"
+    shift
+
+    jira issue list -q"assignee = currentUser()" \
+        -p "$project_key" \
+        --columns key,summary,assignee,updated \
+        --order-by updated \
+        "$@"
+}
+
+if [[ $# -lt 1 ]]; then
+    echo "Error: Missing project key." >&2
+    usage
+fi
+
+project="$1"
+shift
+jira-search "$project" "$@"
