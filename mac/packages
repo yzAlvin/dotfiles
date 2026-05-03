@@ -16,4 +16,11 @@ brew install topgrade
 
 brew install --cask soulseek
 
+brew install fastfetch
+
 curl -fsSL https://opencode.ai/install | bash
+
+brew install shellcheck
+brew install pandoc
+
+

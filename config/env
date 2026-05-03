@@ -1,21 +1,32 @@
 #!/usr/bin/bash
+shell=zsh
 
 export EDITOR=vi
 export STARSHIP_CONFIG="$HOME/dotfiles/config/starship.toml"
 
-eval "$(starship init bash)"
-eval "$(mise activate bash)"
+eval "$(starship init $shell)"
+eval "$(mise activate $shell)"
 
 export PATH="$HOME/dotfiles/work/bin:$PATH"
 export PATH="$HOME/dotfiles/bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
 
 export PATH="$HOME/.config/emacs/bin:$PATH"
+export PATH="$HOME/.emacs.d/bin:$PATH"
 
-bind '"\e[A": history-search-backward'
-bind '"\e[B": history-search-forward'
-bind '"\e[OA": history-search-backward'
-bind '"\e[OB": history-search-forward'
+if [[ "$shell" == "bash" ]]; then
+  bind '"\e[A": history-search-backward'
+  bind '"\e[B": history-search-forward'
+  bind '"\e[OA": history-search-backward'
+  bind '"\e[OB": history-search-forward'
+  
+  source "$HOME/dotfiles/config/.git-completion.bash"
+fi
+
+source "$HOME/dotfiles/config/alias"
+
+export GOROOT=$(go env GOROOT)
+
+export PATH="$HOME/go/bin/gopls:$PATH"
 
 $HOME/dotfiles/config/.git-completion.bash
-

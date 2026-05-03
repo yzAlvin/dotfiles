@@ -1,0 +1,21 @@
+# https://github.com/doomemacs/doomemacs/blob/master/docs/getting_started.org#with-homebrew
+
+# dependencies
+brew install git ripgrep
+brew install coreutils fd
+xcode-select --install
+
+# emacs
+brew tap d12frosted/emacs-plus
+brew install emacs-plus
+
+ln -s /opt/homebrew/opt/emacs-plus@30/Emacs.app /Applications/Emacs.app
+
+# doom
+git clone https://github.com/hlissner/doom-emacs ~/.emacs.d
+~/.emacs.d/bin/doom install
+
+doom doctor
+
+# for vterm
+brew install cmake
